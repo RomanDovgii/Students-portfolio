@@ -1,0 +1,9 @@
+.DS_Store
+Thumbs.db
+.idea
+*.sublime*
+.vscode
+*.log*
+server/node_modules/
+website/src/node_modules/
+website/public/
