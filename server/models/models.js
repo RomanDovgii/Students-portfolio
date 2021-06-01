@@ -42,6 +42,8 @@ const Diploma = sequelize.define(
         id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
         name: {type: DataTypes.STRING, allowNull: false},
         place: {type: DataTypes.STRING},
+        role: {type: DataTypes.STRING, allowNull: false},
+        for_what: {type: DataTypes.TEXT},
         organization: {type: DataTypes.STRING}
     }
 );
@@ -52,16 +54,20 @@ const Event = sequelize.define(
         id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
         name: {type: DataTypes.STRING, allowNull: false},
         place: {type: DataTypes.STRING},
+        role: {type: DataTypes.STRING},
+        for_what: {type: DataTypes.TEXT},
         organization: {type: DataTypes.STRING}
     }
 );
 
-const Conferention = sequelize.define(
-    'event',
+const Certificate = sequelize.define(
+    'certificate',
     {
         id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
         name: {type: DataTypes.STRING, allowNull: false},
         place: {type: DataTypes.STRING},
+        role: {type: DataTypes.STRING, allowNull: false},
+        for_what: {type: DataTypes.TEXT},
         organization: {type: DataTypes.STRING}
     }
 );
@@ -87,15 +93,15 @@ const Participant_event = sequelize.define(
     }
 );
 
-const Participant_conferention = sequelize.define(
-    'participant_conferention',
+const Participant_certificate = sequelize.define(
+    'participant_certificate',
     {
         link_id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     }
 );
 
-User.hasOne(Participant);
-Participant.belongsTo(User);
+User.hasOne(Participant, {foreignKey: {allowNull: false}, onDelete: 'CASCADE'});
+Participant.belongsTo(User, {foreignKey: {allowNull: false, unique: true}, onDelete: 'CASCADE'});
 
 Participant.belongsToMany(University, {through: Participant_universtity});
 University.belongsToMany(Participant, {through: Participant_universtity});
@@ -106,8 +112,8 @@ Diploma.belongsToMany(Participant, {through: Participant_diploma});
 Participant.belongsToMany(Event, {through: Participant_event});
 Event.belongsToMany(Participant, {through: Participant_event});
 
-Participant.belongsToMany(Conferention, {through: Participant_conferention});
-Conferention.belongsToMany(Participant, {through: Participant_conferention});
+Participant.belongsToMany(Certificate, {through: Participant_certificate});
+Certificate.belongsToMany(Participant, {through: Participant_certificate});
 
 module.exports = {
     User,
@@ -115,9 +121,9 @@ module.exports = {
     University,
     Diploma,
     Event,
-    Conferention,
+    Certificate,
     Participant_universtity,
     Participant_diploma,
     Participant_event,
-    Participant_conferention
-};
+    Participant_certificate
+};  

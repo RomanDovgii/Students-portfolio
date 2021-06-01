@@ -1,6 +1,6 @@
 const Router = require('express');
 const router = new Router();
-const diplomaController = require('../Controllers/diplomaController');
+const diplomaController = require('../controllers/diploma');
 
 router.post('/', diplomaController.create);
 router.get('/', diplomaController.getAll);
