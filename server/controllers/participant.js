@@ -17,7 +17,8 @@ class ParticipantController {
                 },
                 defaults: {
                     ...participant,
-                    avatar: fileName
+                    avatar: fileName,
+                    role: 'user'
                 }
             }).then((result) => {
                 const isCreated = result[1];
