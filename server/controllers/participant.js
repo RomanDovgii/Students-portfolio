@@ -38,7 +38,36 @@ class ParticipantController {
         
     }
 
-    async update (req, res) {}
+    async update (req, res) {
+        try {
+            const {avatar} = req.files;
+            let fileName = uuid.v4() + ".jpg";
+
+            const participant = {...req.body};
+            await Participant.update({
+                where: {
+                    userId: participant.userId
+                },
+                defaults: {
+                    ...participant,
+                    avatar: fileName
+                }
+            }).then((result) => {
+                const isCreated = result[1];
+
+                if (!isCreated) {
+                    return res.json({"message": "user already exists"});
+                }
+                
+                avatar.mv(path.resolve(__dirname, '..', 'static', fileName))
+                return res.json(participant)
+            });
+            
+            
+        } catch (error) {
+            next(ApiError.badRequest(error.message));
+        }        
+    }
 
     async get (req, res, next) {
         const {id} = req.params;
