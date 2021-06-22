@@ -1,0 +1,28 @@
+@use "mixins";
+
+*,
+*::before,
+*::after {
+  @include mixins.reset;
+  box-sizing: border-box;
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  @include mixins.verdanaFamily;
+  background-color: #eee;
+}

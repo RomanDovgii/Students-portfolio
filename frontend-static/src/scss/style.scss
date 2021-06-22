@@ -1,0 +1,29 @@
+@use "./variables.scss";
+@use "./mixins.scss";
+@use "./general.scss";
+
+@use "./blocks/logo.scss";
+@use "./blocks/navigation.scss";
+@use "./blocks/promo.scss";
+@use "./blocks/filter.scss";
+@use "./blocks/search.scss";
+@use "./blocks/select.scss";
+@use "./blocks/project-card.scss";
+@use "./blocks/page-nav.scss";
+@use "./blocks/project-popup.scss";
+@use "./blocks/student.scss";
+@use "./blocks/techs.scss";
+@use "./blocks/controls.scss";
+@use "./blocks/big-slider.scss";
+@use "./blocks/description.scss";
+@use "./blocks/project-techs.scss";
+@use "./blocks/hashtags.scss";
+@use "./blocks/upload-form.scss";
+@use "./blocks/check-form.scss";
+@use "./blocks/uploaded.scss";
+@use "./blocks/accepted.scss";
+@use "./blocks/login-form.scss";
+@use "./blocks/signup-form.scss";
+
+@use "./blocks/header.scss";
+@use "./blocks/catalog.scss";
