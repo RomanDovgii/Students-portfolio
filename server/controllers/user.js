@@ -1,5 +1,7 @@
-const {User} = require('../models/models');
+const {User, Participant} = require('../models/models');
 const ApiError = require('../error/error');
+const {REGULAR_EXPRESSION_EMAIL} = require('../utils/const');
+
 
 class UserController {
     async signup(req, res) {
@@ -18,7 +20,8 @@ class UserController {
         const {email, login, password} = req.body;
         if (password) {
             let user;
-            console.log(email)
+            let participant;
+
             switch (true) {
                 case email !== ``:
                     user = await User.findOne({
@@ -27,18 +30,40 @@ class UserController {
                             password: password
                         }
                     });
-                    return res.json(user);
+                    break
                 case login !== ``:
                     user = await User.findOne({
                         where: {
                             login: login,
                             password: password
                         }
-                    });
-                    return res.json(user);      
+                    });                    
+                    break;      
                 default:
-                    return res.json(`Не указан логин или пароль`);
+                    user = {
+                        error: `Не указан логин или пароль`
+                    };
+                    break;
             }
+
+            const id = user.dataValues.id;
+            
+
+            try {
+                participant = await Participant.findOne({
+                    where: {
+                    userId: id,     
+                    }
+                });
+            }
+            catch {
+                participant = {
+                    error: `Участник не найден`
+                };
+            }
+            
+            res.json({...user.dataValues, ...participant.dataValues});
+
         } else {
             res.json(`No password`);
         }
