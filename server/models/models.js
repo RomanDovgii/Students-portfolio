@@ -1,6 +1,5 @@
 const sequelize = require('../db');
 const {DataTypes} = require('sequelize');
-const M = require('minimatch');
 
 const User = sequelize.define(
     'user',

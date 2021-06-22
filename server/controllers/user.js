@@ -33,7 +33,7 @@ class UserController {
         }
     }
 
-    async login (req, res) {
+    async login (req, res, next) {
         const {email, login, password} = req.body;
         if (password) {
             let user;
@@ -55,10 +55,11 @@ class UserController {
                     });                    
                     break;      
                 default:
-                    return next(ApiError.internal(`Ошибка в пароле`));
+                    return next(ApiError.internal(`Не заполнин логин или почта`));
             }
 
             const isPasswordCorrect = bcrypt.compareSync(password, user.dataValues.password);
+
             if (!isPasswordCorrect) {
                 return next(ApiError.internal(`Ошибка в пароле`));
             };
@@ -66,31 +67,21 @@ class UserController {
             const token = generateJwt(user.dataValues.id, user.dataValues.email, user.dataValues.login, user.dataValues.role);
 
             const id = user.dataValues.id;
+
+            participant = await Participant.findOne({
+                where: {
+                userId: id,     
+                }
+            });
             
-            try {
-                participant = await Participant.findOne({
-                    where: {
-                    userId: id,     
-                    }
-                });
-            }
-            catch {
-                return next(ApiError.internal(`Участник не найден`));
-            }
-            
-            res.json({...token, ...participant.dataValues});
+            res.json({...participant, token});
         } else {
             return next(ApiError.internal(`Ошибка в пароле`));
         }
     }
 
     async check (req, res, next) {
-        const token = generateJwt(req.user.id, req.user.email, req.user.login, req.user.role);
-        if(!id) {
-            return next(ApiError.badRequest('Не задан id'));
-        }
-
-        return res.json({token});
+        res.json(200);
     }
 };
 
