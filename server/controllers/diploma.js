@@ -21,9 +21,6 @@ class DiplomaController {
         const {participantId, limit, page} = req.body;
         let diplomas;
 
-        // const currentPage = page || 1;
-        // const currentLimit = limit || 10;
-
         switch (true) {
             case participantId > 0:
                 const participant = await Participant.findByPk(participantId);
