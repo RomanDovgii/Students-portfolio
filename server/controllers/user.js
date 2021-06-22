@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const {REGULAR_EXPRESSION_EMAIL} = require('../utils/const');
 
-const generateJwt = (id, email, role) => {
+const generateJwt = (id, email, login, role) => {
     return jwt.sign({
         id,
         email,
@@ -18,12 +18,13 @@ const generateJwt = (id, email, role) => {
 };
 
 class UserController {
-    async signup(req, res) {
-        const {email, login, password, role} = req.body;
+    async signup(req, res, next) {
+        const {email, login, password, role = `USER`} = req.body;
+        
         try {
             const hashPassword = await bcrypt.hash(password, 10);
-            const user = await User.create({email, login, password: hashPassword, role: role || `user`});
-            const token = generateJwt(user.id, user.email, user.login, user.role);
+            const user = await User.create({email, login, password: hashPassword, role});
+            const token = await generateJwt(user.dataValues.id, user.dataValues.email, user.dataValues.login, user.dataValues.role);
             return res.json(token);
         }
         catch (err) {
