@@ -41,6 +41,15 @@ class ParticipantController {
     async update (req, res) {}
 
     async get (req, res, next) {
+        const {id} = req.params;
+
+        const participant = await Participant.findOne({
+            where: {
+                id: id
+            }
+        });
+
+        res.json(participant);
     }
 
     async getAll(req, res, next) {

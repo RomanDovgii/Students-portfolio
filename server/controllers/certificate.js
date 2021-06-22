@@ -1,4 +1,4 @@
-const {Certificate, Participant_certificate} = require('../models/models');
+const {Certificate, Participant_certificate, Participant} = require('../models/models');
 const ApiError = require('../error/error');
 
 class CertificateController {
@@ -17,11 +17,36 @@ class CertificateController {
     }
 
     async getAll (req, res, next) {
-        const certificates = await Certificate.findAll();
-        return res.json('certificates');
+        const {participantId, limit, page} = req.body;
+        let certificates;
+
+        // const currentPage = page || 1;
+        // const currentLimit = limit || 10;
+
+        switch (true) {
+            case participantId > 0:
+                const participant = await Participant.findByPk(participantId);
+                certificates = await participant.getCertificates();
+                return res.json(certificates);
+
+            default:
+                certificates = await Certificate.findAll();
+                return res.json(certificates);
+                break;
+        }
     }
 
-    async get (req, res) {}
+    async get (req, res) {
+        const {id} = req.params;
+
+        const certificate = await Certificate.findOne({
+            where: {
+                id: id
+            }
+        });
+
+        res.json(certificate);
+    }
 };
 
 module.exports = new CertificateController();

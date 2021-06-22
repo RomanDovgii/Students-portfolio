@@ -21,7 +21,17 @@ class EventController {
         return res.json('events');
     }
 
-    async get (req, res) {}
+    async get (req, res) {
+        const {id} = req.params;
+
+        const event = await Event.findOne({
+            where: {
+                id: id
+            }
+        });
+
+        res.json(event);
+    }
 };
 
 module.exports = new EventController();

@@ -13,7 +13,17 @@ class UniversityController {
         return res.json(universities);
     }
 
-    async get (req, res) {}
+    async get (req, res) {
+        const {id} = req.params;
+
+        const university = await University.findOne({
+            where: {
+                id: id
+            }
+        });
+
+        res.json(university);
+    }
 };
 
 module.exports = new UniversityController();

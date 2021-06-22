@@ -21,8 +21,8 @@ class DiplomaController {
         const {participantId, limit, page} = req.body;
         let diplomas;
 
-        const currentPage = page || 1;
-        const currentLimit = limit || 10;
+        // const currentPage = page || 1;
+        // const currentLimit = limit || 10;
 
         switch (true) {
             case participantId > 0:
@@ -37,7 +37,17 @@ class DiplomaController {
         }
     }
 
-    async get (req, res) {}
+    async get (req, res) {
+        const {id} = req.params;
+
+        const diploma = await Diploma.findOne({
+            where: {
+                id: id
+            }
+        });
+
+        res.json(diploma);
+    }
 };
 
 module.exports = new DiplomaController();
