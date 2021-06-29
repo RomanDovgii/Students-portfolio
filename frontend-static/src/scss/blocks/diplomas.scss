@@ -19,17 +19,17 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 1rem;
+  margin-top: 3rem;
 }
 
 .diplomas__diploma-card {
   &:not(:first-child) {
-    margin-top: 1rem;
+    margin-top: 3rem;
   }
 }
 
 .diplomas__more-button {
-  margin: 2rem auto 0 auto;
+  margin: 3rem auto 0 auto;
 }
 
 .diplomas__page-controls {

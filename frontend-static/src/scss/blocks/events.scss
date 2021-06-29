@@ -1,0 +1,30 @@
+@use "../variables";
+@use "../mixins";
+
+.events {
+  background-color: variables.$black;
+}
+
+.events__wrapper {
+  @include mixins.wrapperPhone;
+  padding: 0 2rem;
+}
+
+.events__heading {
+  @include mixins.sectionHeadingMobile;
+  padding: 1rem 2rem 2rem 2rem;
+}
+
+.events__list {
+  list-style: none;
+}
+
+.events__event-card {
+  &:not(:first-child) {
+    margin-top: 3rem;
+  }
+}
+
+.events__more-button {
+ margin: 1rem auto 0 auto;
+}

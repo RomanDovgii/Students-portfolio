@@ -11,14 +11,9 @@
   &:focus {
     transform: scale(1.05);
   }
-
-  &:not(:first-child) {
-    margin-top: 2rem;
-  }
 }
 
 .diploma-card__name {
-  text-decoration: none;
   color: variables.$blue-bright;
   font-size: 1.6rem;
   font-weight: 800;
@@ -45,18 +40,16 @@
 
 .diploma-card__description {
   color: variables.$blue-bright;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: 600;
 }
 
 .diploma-card__reciever,
 .diploma-card__giver,
 .diploma-card__reason {
-  text-decoration: none;
-
   color: variables.$blue-bright;
   margin-top: 0.3rem;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 700;
 }
 
@@ -69,4 +62,9 @@
   opacity: 0.7;
   display: flex;
   justify-content: center;
+}
+
+.diploma-card__link {
+  display: flex;
+  text-decoration: none;
 }
