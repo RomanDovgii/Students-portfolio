@@ -7,11 +7,12 @@
 
 .diplomas__wrapper {
   @include mixins.wrapperPhone;
-  padding: 1rem 2rem 2rem 2rem;
+  padding: 0 2rem 2rem 2rem;
 }
 
 .diplomas__heading {
   @include mixins.sectionHeadingMobile;
+  padding: 1rem 0 2rem 0;
 }
 
 .diplomas__list {
@@ -19,7 +20,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 3rem;
 }
 
 .diplomas__diploma-card {
