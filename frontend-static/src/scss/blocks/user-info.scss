@@ -1,0 +1,41 @@
+@use "../variables";
+@use "../mixins";
+
+.user-info {
+  background-color: variables.$black;
+}
+
+.user-info__wrapper {
+  @include mixins.wrapperPhone;
+  padding: 0 2rem;
+}
+
+.user-info__avatar {
+  margin-top: 3rem;
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.user-info__name {
+  margin-top: 2rem;
+
+  font-size: 2.4rem;
+  color: variables.$blue-bright;
+}
+
+.user-info__about {
+  margin-top: 1rem;
+
+  font-size: 1.5rem;
+  color: variables.$blue-bright;
+}
+
+.user-info__add {
+  text-decoration: none;
+  display: block;
+  padding: 2rem;
+  max-width: max-content;
+  margin: 0 auto;
+  color: variables.$blue-bright;
+}
