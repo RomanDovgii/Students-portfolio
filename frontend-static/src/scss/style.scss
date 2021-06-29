@@ -1,3 +1,12 @@
-@use "./variables.scss";
-@use "./mixins.scss";
-@use "./general.scss";
+@use "variables";
+@use "mixins";
+@use "general";
+
+@use "blocks/logo";
+@use "blocks/navigation";
+@use "blocks/diplomas";
+@use "blocks/diploma-card";
+@use "blocks/more-button";
+
+@use "blocks/header";
+@use "blocks/footer";

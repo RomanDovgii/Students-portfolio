@@ -1,0 +1,37 @@
+@use "../variables";
+@use "../mixins";
+
+.diplomas {
+  background-color: variables.$black;
+}
+
+.diplomas__wrapper {
+  @include mixins.wrapperPhone;
+  padding: 1rem 2rem 2rem 2rem;
+}
+
+.diplomas__heading {
+  @include mixins.sectionHeadingMobile;
+}
+
+.diplomas__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.diplomas__diploma-card {
+  &:not(:first-child) {
+    margin-top: 1rem;
+  }
+}
+
+.diplomas__more-button {
+  margin: 2rem auto 0 auto;
+}
+
+.diplomas__page-controls {
+  display: none;
+}

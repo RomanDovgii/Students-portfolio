@@ -1,0 +1,72 @@
+@use "../variables";
+
+.diploma-card {
+  background-color: variables.$blue-dark;
+  border-radius: 2.5rem;
+  box-shadow: 0px 0px 5px 1px variables.$blue-bright;
+  padding-bottom: 1rem;
+  transition: transform 0.3s;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.05);
+  }
+
+  &:not(:first-child) {
+    margin-top: 2rem;
+  }
+}
+
+.diploma-card__name {
+  text-decoration: none;
+  color: variables.$blue-bright;
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+.diploma-card__img {
+  border-top-left-radius: 2.5rem;
+  border-top-right-radius: 2.5rem;
+
+  width: 100%;
+  min-height: 28rem;
+}
+
+.diploma-card__to,
+.diploma-card__from,
+.diploma-card__for {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+}
+
+.diploma-card__description {
+  color: variables.$blue-bright;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.diploma-card__reciever,
+.diploma-card__giver,
+.diploma-card__reason {
+  text-decoration: none;
+
+  color: variables.$blue-bright;
+  margin-top: 0.3rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.diploma-card__date {
+  padding: 0 1rem;
+  margin-top: 1rem;
+  color: variables.$blue-bright;
+  font-size: 1.5rem;
+  font-weight: 600;
+  opacity: 0.7;
+  display: flex;
+  justify-content: center;
+}

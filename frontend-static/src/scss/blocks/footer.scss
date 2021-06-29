@@ -1,0 +1,22 @@
+@use "../variables";
+@use "../mixins";
+
+.footer {
+  background-color: rgba(variables.$blue, 0.9);
+}
+
+.footer__wrapper {
+  @include mixins.wrapperPhone;
+}
+
+@media (min-width: variables.$sm) {
+  .footer__wrapper {
+    @include mixins.wrapperTablet;
+  }
+}
+
+@media (min-width: variables.$md) {
+  .footer__wrapper {
+    @include mixins.wrapperDesktop;
+  }
+}

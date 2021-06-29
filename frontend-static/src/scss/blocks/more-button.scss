@@ -1,0 +1,16 @@
+@use "../variables";
+
+.more-button {
+  border: none;
+  background: none;
+  display: block;
+
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 0.2rem solid variables.$blue-bright;
+
+  font-size: 2rem;
+  font-weight: 600;
+  color: variables.$blue-bright;
+  background-color: variables.$blue-dark;
+}

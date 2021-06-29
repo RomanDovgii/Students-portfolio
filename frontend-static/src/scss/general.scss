@@ -23,6 +23,5 @@ html {
 }
 
 body {
-  @include mixins.verdanaFamily;
-  background-color: #eee;
+  @include mixins.montserratFamily;
 }

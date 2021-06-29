@@ -1,0 +1,38 @@
+@use "../variables";
+
+.navigation__list {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navigation__item {
+  &:not(:first-child) {
+    margin-top: 2rem;
+  }
+}
+
+.navigation__link {
+  outline: none;
+  font-weight: 400;
+  text-decoration: none;
+  font-size: 1.8rem;
+  color: variables.$blue-bright;
+
+  transition: all 0.3s;
+
+  &--active {
+    font-weight: 800;
+  }
+
+  &:hover,
+  &:focus {
+    color: #fff;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}

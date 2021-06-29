@@ -1,0 +1,36 @@
+@use "../variables";
+
+.logo {
+  outline: none;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-decoration: none;
+
+  transition: opacity 0.3s;
+
+  &:hover,
+  &:focus {
+    .logo__heading {
+      color: #fff;
+    }
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.logo__img {
+  border-radius: 50%;
+}
+
+.logo__heading {
+  margin-top: 1rem;
+
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: variables.$blue-bright;
+  transition: color 0.3s;
+}

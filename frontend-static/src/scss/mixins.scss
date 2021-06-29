@@ -1,10 +1,12 @@
+@use "variables";
+
 @mixin reset {
   padding: 0;
   margin: 0;
 }
 
-@mixin gilroyFamily {
-  font-family: 'Gilroy', -apple-system, BlinkMacSystemFont,Segoe UI, Helvetica Neue, Arial,sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+@mixin montserratFamily {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont,Segoe UI, Helvetica Neue, Arial,sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
 }
 
 @mixin verdanaFamily {
@@ -32,18 +34,26 @@
   line-height: 2.1rem;
 }
 
-@mixin pageHeading {
-  @include verdanaFamily;
-  font-weight: 700;
-  font-size: 2.7rem;
-  line-height: 4rem;
+@mixin sectionHeadingMobile {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: variables.$blue-bright;
 }
 
-@mixin wrapper {
-  max-width: 124.5rem;
+@mixin wrapperDesktop {
+  max-width: variables.$lg;
   width: 100%;
   margin: 0 auto;
+}
 
-  padding-right: 2rem;
-  padding-left: 2rem;
+@mixin wrapperTablet {
+  max-width: variables.$md;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@mixin wrapperPhone {
+  max-width: variables.$sm;
+  width: 100%;
+  margin: 0 auto;
 }
