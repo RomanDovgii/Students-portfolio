@@ -68,3 +68,15 @@
   display: flex;
   text-decoration: none;
 }
+
+@media (min-width: variables.$sm) {
+  .diploma-card {
+    max-width: 49%;
+  }
+}
+
+@media (min-width: variables.$md) {
+  .diploma-card {
+    max-width: 31%;
+  }
+}

@@ -7,12 +7,11 @@
 
 .events__wrapper {
   @include mixins.wrapperPhone;
-  padding: 0 2rem;
 }
 
 .events__heading {
   @include mixins.sectionHeadingMobile;
-  padding: 1rem 0 2rem 0;
+  padding: 0 0 2rem 0;
 }
 
 .events__list {
@@ -20,11 +19,53 @@
 }
 
 .events__event-card {
-  &:not(:first-child) {
-    margin-top: 3rem;
+  margin-top: 3rem;
+
+  &:first-child {
+    margin-top: 0rem;
   }
 }
 
 .events__more-button {
  margin: 1rem auto 0 auto;
+}
+
+.events__page-controls {
+  display: none;
+}
+
+@media (min-width: variables.$sm) {
+  .events__wrapper {
+    @include mixins.wrapperTablet;
+  }
+
+  .events__list  {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: -2rem;
+  }
+
+  .events__event-card {
+    margin-top: 2rem;
+
+    &:first-child {
+      margin-top: 2rem;
+    }
+  }
+
+  .events__more-button {
+    margin-top: 4rem;
+  }
+}
+
+@media (min-width: variables.$md) {
+  .events__wrapper {
+    @include mixins.wrapperDesktop;
+  }
+
+  .events__more-button {
+    display: none;
+  }
 }

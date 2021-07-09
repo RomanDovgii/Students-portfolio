@@ -23,8 +23,10 @@
 }
 
 .diplomas__diploma-card {
-  &:not(:first-child) {
-    margin-top: 3rem;
+  margin-top: 3rem;
+
+  &:first-child {
+    margin-top: 0;
   }
 }
 
@@ -34,4 +36,31 @@
 
 .diplomas__page-controls {
   display: none;
+}
+
+@media (min-width: variables.$sm) {
+  .diplomas__wrapper {
+    @include mixins.wrapperTablet;
+  }
+
+  .diplomas__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: -2rem;
+  }
+
+  .diplomas__diploma-card {
+    margin-top: 2rem;
+
+    &:first-child {
+      margin-top: 2rem;
+    }
+  }
+}
+
+@media (min-width: variables.$md) {
+  .diplomas__wrapper {
+    @include mixins.wrapperDesktop;
+  }
 }
