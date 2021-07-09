@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Изменение данных о пользователе</title>
+  <title>Страница загурзки</title>
   <link rel="stylesheet" href="/css/style.min.css">
 </head>
 <body>
@@ -34,31 +34,36 @@
   </header>
 
   <main>
-    <section class="change-user">
-      <div class="change-user__wrapper">
-        <h2 class="change-user__heading">Изменение информации о пользователе</h2>
-        <form action="" class="form__form">
+    <section class="upload-form">
+      <div class="upload-form__wrapper">
+        <h2 class="upload-form__heading">Форма добавления диплома или сертификата</h2>
+        <form action="" class="upload-form__form form">
           <label class="form__label form__label--file">
-            Ваше фото:
-            <input type="file" class="form__input visually-hidden" required>
+            Загрузите изображение диплома или сертификата:
+            <input type="file" class="form__input" required>
           </label>
-          <label for="" class="form__label">
-            Ваше имя:
-            <input type="text" class="form__input" placeholder="Введите ваше имя">
+
+          <label class="form__label">
+            Название диплома или сертификата:
+            <input type="text" class="form__input" placeholder="Введите название" required>
           </label>
-          <label for="" class="form__label">
-            Ваша фамилия:
-            <input type="text" class="form__input" placeholder="Введите вашу фамилию">
+
+          <label class="form__label">
+            Кто вручил:
+            <input type="text" class="form__input" placeholder="Введите название организации" required>
           </label>
-          <label for="" class="form__label">
-            О вас:
-            <textarea name="" id="" cols="30" rows="10" class="form__input" placeholder="Введите информацию о вас"></textarea>
+
+          <label class="form__label">
+            За что вручено:
+            <input type="text" class="form__input" placeholder="Введите за обоснование для вручения" required>
           </label>
-          <label for="" class="form__label">
-            Ваша специализация:
-            <input type="text" class="form__input" placeholder="Введите вашу специализацию">
+
+          <label class="form__label">
+            Когда вручено:
+            <input type="date" class="form__input" required>
           </label>
-          <button type="submit" class="form__submit">Сохранить</button>
+
+          <button class="form__submit">Обновить</button>
         </form>
       </div>
     </section>

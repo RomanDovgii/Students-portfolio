@@ -1,0 +1,105 @@
+@use "../variables";
+@use "../mixins";
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__label {
+  display: flex;
+  flex-direction: column;
+
+  color: variables.$blue-bright;
+  font-size: 1.8rem;
+  margin-top: 2rem;
+
+  &:first-child {
+    margin-top: 0rem;
+  }
+
+  &--file {
+    &::after {
+      content: "Выберите файл";
+      display: block;
+      max-width: 20rem;
+      height: 3.7rem;
+      padding: 1rem 2rem;
+      border-radius: 2rem;
+      margin-top: 1rem;
+
+      font-size: 1.4rem;
+      color: rgba(variables.$blue-bright, 0.5);
+      font-size: 1.4rem;
+
+      background-color: variables.$blue-dark;
+      box-shadow: 0px 0px 5px 1px variables.$blue-bright;
+
+      @include mixins.verdanaFamily;
+    }
+  }
+
+  &--checkbox {
+    flex-direction: row;
+    align-items: center;
+
+    input {
+      margin-left: 2rem;
+      margin-top: 0;
+    }
+  }
+}
+
+.form__input {
+  background: none;
+  border: none;
+  outline: none;
+
+  margin-top: 1rem;
+  max-width: 30rem;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+
+  font-size: 1.4rem;
+  color: variables.$blue-bright;
+
+  background-color: variables.$blue-dark;
+  box-shadow: 0px 0px 5px 1px variables.$blue-bright;
+  resize: none;
+  transition: transform 0.2s;
+
+  @include mixins.verdanaFamily;
+
+  &::placeholder {
+    color: rgba(variables.$blue-bright, 0.5);
+    font-size: 1.4rem;
+  }
+
+  &:focus {
+    transform: scale(1.1);
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.form__submit {
+  display: inline-flexbox;
+  background: none;
+  border: none;
+
+  max-width: 20rem;
+  margin-top: 3rem;
+  border-radius: 25rem;
+  padding: 1rem 2rem;
+
+  color: variables.$blue-bright;
+  font-size: 1.4rem;
+  font-weight: 700;
+
+  background-color: variables.$blue-dark;
+  box-shadow: 0px 0px 5px 1px variables.$blue-bright;
+
+  cursor: pointer;
+}

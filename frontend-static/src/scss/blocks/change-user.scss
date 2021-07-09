@@ -1,42 +1,30 @@
 @use "../variables";
 @use "../mixins";
 
-.login__wrapper {
+.change-user__wrapper {
   @include mixins.wrapperPhone;
 }
 
-.login__heading {
+.change-user__heading {
   @include mixins.sectionHeadingMobile;
-  padding: 1rem 0 1rem 0;
 }
 
-.login__text {
-  color: variables.$blue-bright;
-  font-size: 1.8rem;
-  font-weight: 600;
-}
-
-.login__link {
-  color: variables.$grey;
-  text-decoration: none;
-}
-
-.login__form {
+.change-user__form {
   margin-top: 1rem;
 }
 
 @media (min-width: variables.$sm) {
-  .login__wrapper {
+  .change-user__wrapper {
     @include mixins.wrapperTablet;
   }
 
-  .login__heading {
+  .change-user__heading {
     @include mixins.sectionHeadingDesktop;
   }
 }
 
 @media (min-width: variables.$md) {
-  .login__wrapper {
+  .change-user__wrapper {
     @include mixins.wrapperDesktop
   }
 }

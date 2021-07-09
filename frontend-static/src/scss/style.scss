@@ -13,6 +13,10 @@
 @use "blocks/user-info";
 @use "blocks/login";
 @use "blocks/registration";
+@use "blocks/upload-form";
+@use "blocks/change-user";
+
+@use "blocks/form";
 
 @use "blocks/header";
 @use "blocks/footer";
