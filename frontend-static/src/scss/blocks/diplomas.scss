@@ -20,14 +20,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: -3rem;
 }
 
 .diplomas__diploma-card {
   margin-top: 3rem;
-
-  &:first-child {
-    margin-top: 0;
-  }
 }
 
 .diplomas__more-button {
@@ -47,20 +44,29 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-top: -2rem;
+    margin-top: -2.5rem;
   }
 
   .diplomas__diploma-card {
-    margin-top: 2rem;
+    margin-top: 2.5rem;
+  }
 
-    &:first-child {
-      margin-top: 2rem;
-    }
+  .diplomas__heading {
+    @include mixins.sectionHeadingDesktop;
   }
 }
 
 @media (min-width: variables.$md) {
   .diplomas__wrapper {
     @include mixins.wrapperDesktop;
+  }
+
+  .diplomas__more-button {
+    display: none;
+  }
+
+  .diplomas__page-controls {
+    display: flex;
+    margin-top: 2.5rem;
   }
 }

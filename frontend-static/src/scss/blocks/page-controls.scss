@@ -1,0 +1,24 @@
+@use "../variables";
+
+.page-controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.page-controls__link {
+  text-decoration: none;
+  color: variables.$blue-bright;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.page-controls__range {
+  color: variables.$blue-bright;
+  font-size: 1.8rem;
+  font-weight: 500;
+
+  margin-left: 2rem;
+  margin-right: 2rem;
+}

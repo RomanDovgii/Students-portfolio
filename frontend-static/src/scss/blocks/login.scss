@@ -1,0 +1,71 @@
+@use "../variables";
+@use "../mixins";
+
+.login__wrapper {
+  @include mixins.wrapperPhone;
+}
+
+.login__heading {
+  @include mixins.sectionHeadingMobile;
+  padding: 1rem 0 2rem 0;
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login__label {
+  color: variables.$blue-bright;
+  font-size: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+
+  &:first-child {
+    margin-top: 0rem;
+  }
+}
+
+.login__input {
+  background: none;
+  border: none;
+
+  margin-top: 1rem;
+  max-width: 25rem;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+
+  font-size: 1.4rem;
+  color: variables.$blue-bright;
+
+  background-color: variables.$blue-dark;
+  box-shadow: 0px 0px 5px 1px variables.$blue-bright;
+
+  @include mixins.verdanaFamily;
+
+  &::placeholder {
+    color: rgba(variables.$blue-bright, 0.5);
+    font-size: 1.4rem;
+  }
+}
+
+.login__submit {
+  display: inline-flexbox;
+  background: none;
+  border: none;
+
+  max-width: 20rem;
+  margin-top: 3rem;
+  border-radius: 25rem;
+  padding: 1rem 2rem;
+
+  color: variables.$blue-bright;
+  font-size: 1.4rem;
+  font-weight: 700;
+
+  background-color: variables.$blue-dark;
+  box-shadow: 0px 0px 5px 1px variables.$blue-bright;
+
+  cursor: pointer;
+}

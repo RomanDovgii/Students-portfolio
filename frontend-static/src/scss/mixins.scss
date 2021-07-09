@@ -40,6 +40,13 @@
   color: variables.$blue-bright;
 }
 
+@mixin sectionHeadingDesktop {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: variables.$blue-bright;
+}
+
+
 @mixin wrapperDesktop {
   max-width: variables.$lg;
   width: 100%;
@@ -56,5 +63,5 @@
   max-width: variables.$sm;
   width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0 2rem 2rem 2rem;
 }

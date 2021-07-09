@@ -25,6 +25,16 @@
 @media (min-width: variables.$sm) {
   .footer__wrapper {
     @include mixins.wrapperTablet;
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer__developed-by {
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
   }
 }
 

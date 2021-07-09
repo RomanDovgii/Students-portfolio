@@ -4,12 +4,15 @@
 
 @use "blocks/logo";
 @use "blocks/navigation";
-@use "blocks/diplomas";
 @use "blocks/diploma-card";
 @use "blocks/more-button";
+@use "blocks/page-controls";
+@use "blocks/diplomas";
 @use "blocks/events";
 @use "blocks/event-card";
 @use "blocks/user-info";
+@use "blocks/login";
+@use "blocks/registration";
 
 @use "blocks/header";
 @use "blocks/footer";
