@@ -27,15 +27,58 @@
 .user-info__about {
   margin-top: 1rem;
 
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   color: variables.$blue-bright;
 }
 
+.user-info__change,
 .user-info__add {
   text-decoration: none;
   display: block;
-  padding: 2rem;
-  max-width: max-content;
-  margin: 0 auto;
+  padding-top: 1rem;
   color: variables.$blue-bright;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.user-info__diplomas {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 450px) {
+  .user-info__main {
+    display: flex;
+    align-items: center;
+  }
+
+  .user-info__name-description {
+    margin-left: 2rem;
+  }
+}
+
+@media (min-width: variables.$sm) {
+  .user-info__wrapper {
+    @include mixins.wrapperTablet;
+  }
+
+
+
+  .user-info__avatar {
+    max-width: 12rem;
+  }
+
+  .user-info__controls {
+    display: flex;
+  }
+
+  .user-info__add {
+    margin-left: 2rem;
+  }
+}
+
+@media (min-width: variables.$md) {
+  .user-info__wrapper {
+    @include mixins.wrapperDesktop;
+  }
 }
