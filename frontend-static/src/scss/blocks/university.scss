@@ -1,0 +1,63 @@
+@use "../variables";
+@use "../mixins";
+
+.university__wrapper {
+  @include mixins.wrapperPhone;
+}
+
+.university__heading {
+  @include mixins.sectionHeadingMobile;
+}
+
+.university__main {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.university__logo {
+  width: 100%;
+  height: auto;
+
+  margin: 0 auto;
+}
+
+.university__description {
+  margin-top: 1rem;
+  font-size: 1.6rem;
+  color: variables.$blue-bright;
+}
+
+@media (min-width: 500px) {
+  .university__main {
+    flex-direction: row;
+  }
+
+  .university__logo {
+    width: 30rem;
+    height: auto;
+    margin: 0;
+  }
+
+  .university__description {
+    margin-top: 0;
+    margin-left: 2rem;
+    max-width: 50rem;
+  }
+}
+
+@media (min-width: variables.$sm) {
+  .university__wrapper {
+    @include mixins.wrapperTablet;
+  }
+
+  .university__heading {
+    @include mixins.sectionHeadingDesktop;
+  }
+}
+
+@media (min-width: variables.$md) {
+  .university__wrapper {
+    @include mixins.wrapperDesktop
+  }
+}

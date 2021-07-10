@@ -1,0 +1,69 @@
+@use "../variables";
+@use "../mixins";
+
+.event__wrapper {
+  @include mixins.wrapperPhone;
+}
+
+.event__heading {
+  @include mixins.sectionHeadingMobile;
+}
+
+.event__picture {
+  width: 100%;
+  height: auto;
+  margin-top: 1rem;
+}
+
+.event__text {
+  color: variables.$blue-bright;
+  font-size: 1.6rem;
+  font-weight: 500;
+
+  margin-top: 1rem;
+}
+
+.event__where {
+  color: variables.$blue-bright;
+  font-size: 1.6rem;
+  margin-top: 1rem;
+  font-weight: 500;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.event__description {
+  font-weight: 700;
+}
+
+@media (min-width: 450px) {
+  .event__main {
+    display: flex;
+    align-items: center;
+  }
+
+  .event__picture {
+    max-width: 40rem;
+  }
+
+  .event__text {
+    margin-left: 2rem;
+  }
+}
+
+@media (min-width: variables.$sm) {
+  .event__wrapper {
+    @include mixins.wrapperTablet;
+  }
+
+  .event__heading {
+    @include mixins.sectionHeadingDesktop;
+  }
+}
+
+@media (min-width: variables.$md) {
+  .event__wrapper {
+    @include mixins.wrapperDesktop
+  }
+}

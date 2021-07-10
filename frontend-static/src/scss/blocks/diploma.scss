@@ -1,0 +1,74 @@
+@use "../variables";
+@use "../mixins";
+
+.diploma__wrapper {
+  @include mixins.wrapperPhone;
+}
+
+.diploma__heading {
+  @include mixins.sectionHeadingMobile;
+}
+
+.diploma__picture {
+  width: 100%;
+  height: auto;
+}
+
+.diploma__about {
+  font-size: 1.6rem;
+  color: variables.$blue-bright;
+  margin-top: 1rem;
+}
+
+.diploma__information {
+  margin-top: 1rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: variables.$blue-bright;
+  display: flex;
+  flex-direction: column;
+}
+
+.diploma__description {
+  font-weight: 600;
+}
+
+.diploma__link {
+  text-decoration: none;
+  color: variables.$blue-bright;
+}
+
+@media (min-width: 500px) {
+  .diploma__main {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .diploma__picture {
+    width: 30rem;
+    height: auto;
+    margin: 0;
+  }
+
+  .diploma__about {
+    margin-top: 0;
+    margin-left: 2rem;
+    max-width: 50rem;
+  }
+}
+
+@media (min-width: variables.$sm) {
+  .diploma__wrapper {
+    @include mixins.wrapperTablet;
+  }
+
+  .diploma__heading {
+    @include mixins.sectionHeadingDesktop;
+  }
+}
+
+@media (min-width: variables.$md) {
+  .diploma__wrapper {
+    @include mixins.wrapperDesktop
+  }
+}
