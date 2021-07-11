@@ -53,8 +53,7 @@ const Event = sequelize.define(
         id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
         name: {type: DataTypes.STRING, allowNull: false},
         place: {type: DataTypes.STRING},
-        role: {type: DataTypes.STRING},
-        for_what: {type: DataTypes.TEXT},
+        date: {type: DataTypes.DATE},
         organization: {type: DataTypes.STRING}
     }
 );
